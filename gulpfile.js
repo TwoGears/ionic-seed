@@ -205,7 +205,7 @@ gulp.task('indexProd', ['prod'], function() {
     gulp.start('index');
 });
 
-gulp.task('init', ['install'], function() {
+gulp.task('setup', ['install'], function() {
     gulp.start('indexDev');
     gulp.start('sass');
     gulp.start('img');

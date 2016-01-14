@@ -5,9 +5,9 @@
     .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
 
-        .state('stateName', {
+        .state('intro', {
             url: '/',
-            templateUrl: 'templateUrl'
+            templateUrl: 'intro/intro.tmpl.html'
         })
 
         ;
