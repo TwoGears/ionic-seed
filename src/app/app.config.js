@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('{{APPNAME}}')
+    angular.module('APPNAME')
     .config(function() {
 
     });

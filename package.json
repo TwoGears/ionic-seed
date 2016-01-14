@@ -37,6 +37,6 @@
     "ios"
   ],
   "scripts": {
-    "init": "npm install && gulp init && ionic serve"
+    "setup": "npm install && gulp init && ionic state restore"
   }
 }

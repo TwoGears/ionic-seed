@@ -10,6 +10,7 @@
         'APPNAME.controllers'
     ]);
     angular.module('APPNAME.config', []);
+    angular.module('APPNAME.env', []);
     angular.module('APPNAME.templates', []);
     angular.module('APPNAME.utils', ['APPNAME.config']);
     angular.module('APPNAME.models', ['APPNAME.utils']);
