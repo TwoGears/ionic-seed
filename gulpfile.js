@@ -147,7 +147,7 @@ gulp.task('sass', function(done) {
 // Watch for changes
 // Does not work/breaks when a folder is renamed or deleted
 gulp.task('watch', function() {
-    gulp.watch(paths.index.input, {cwd: SRC}, ['index']);
+    gulp.watch(paths.index, {cwd: SRC}, ['index']);
     gulp.watch(paths.sass.watch, {cwd: SRC}, ['sass']);
     gulp.watch(paths.templates.input, {cwd: SRC}, ['jsapp']);
     gulp.watch(paths.js.input.components, {cwd: SRC}, ['jscomponents']);
@@ -164,7 +164,7 @@ gulp.task('install', function() {
 
 // Switch to development environment
 gulp.task('devEnv', function() {
-    gulp.src(paths.index.input, {cwd: SRC})
+    gulp.src(paths.index, {cwd: SRC})
       .pipe(dev(true))
       .pipe(gulp.dest(SRC));
 
@@ -173,12 +173,12 @@ gulp.task('devEnv', function() {
             createModule: false,
             environment: 'dev'
         }))
-        .pipe(gulp.dest(paths.env.output));
+        .pipe(gulp.dest(paths.env.output, {cwd: SRC}));
 });
 
 // Switch to production environment
 gulp.task('prodEnv', function() {
-    gulp.src(paths.index.input, {cwd: SRC})
+    gulp.src(paths.index, {cwd: SRC})
         .pipe(dev(false))
         .pipe(gulp.dest(SRC));
 
