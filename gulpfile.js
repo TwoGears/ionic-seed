@@ -67,7 +67,9 @@ var onError = function (err) {
 };
 
 // Combined javascript task
-gulp.task('js', ['jsapp', 'jscomponents']);
+gulp.task('js', ['templates', 'jscomponents'], function() {
+    gulp.start('jsapp');
+});
 
 // Move index.html from SRC to WWW
 gulp.task('index', function() {
@@ -94,7 +96,7 @@ gulp.task('templates', function() {
 });
 
 // Concat, minify and annotate all app.*.js files
-gulp.task('jsapp', ['templates'], function() {
+gulp.task('jsapp', function() {
     return gulp.src(paths.js.input.app, {cwd: SRC})
         .pipe(plumber({errorHandler: onError}))
         .pipe(sourcemaps.init())
@@ -149,7 +151,8 @@ gulp.task('sass', function(done) {
 gulp.task('watch', function() {
     gulp.watch(paths.index, {cwd: SRC}, ['index']);
     gulp.watch(paths.sass.watch, {cwd: SRC}, ['sass']);
-    gulp.watch(paths.templates.input, {cwd: SRC}, ['jsapp']);
+    gulp.watch(paths.js.input.app, {cwd: SRC}, ['jsapp']);
+    gulp.watch(paths.templates.input, {cwd: SRC}, ['templates']);
     gulp.watch(paths.js.input.components, {cwd: SRC}, ['jscomponents']);
     gulp.watch(paths.imgs, {cwd: SRC}, ['img']);
 });
