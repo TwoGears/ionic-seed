@@ -2,7 +2,8 @@
   "name": "APPNAME",
   "private": "true",
   "devDependencies": {
-    "ionic": "driftyco/ionic-bower#1.2.4"
+    "ionic": "driftyco/ionic-bower#1.2.4",
+    "angular-mocks": "1.4.3"
   },
   "version": "1.0.0"
 }
