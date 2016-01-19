@@ -1,2 +1,2 @@
 angular.module('APPNAME.env')
-.constant('ENV', {"dev":true});
+.constant('ENV', {"dev":false});
