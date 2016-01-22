@@ -1,7 +1,7 @@
 module.exports = function(gulp, bower, util) {
     'use strict';
 
-    // Install bower packages
+    // Installs bower packages
     gulp.task('install', function() {
       return bower.commands.install()
         .on('log', function(data) {

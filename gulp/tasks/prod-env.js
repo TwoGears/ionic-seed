@@ -1,6 +1,9 @@
 module.exports = function(gulp, paths, SRC, WWW, dev, ngConfig) {
     'use strict';
 
+    // Switches to development environment:
+    // Uncomments/comments files in index.html
+    // Makes the app.env.js file with prod settings
     gulp.task('prodEnv', function() {
         gulp.src(paths.index, {cwd: SRC})
             .pipe(dev(false))

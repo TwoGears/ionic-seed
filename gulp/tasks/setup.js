@@ -1,7 +1,7 @@
 module.exports = function(gulp) {
     'use strict';
 
-    // Install bower libraries, compile js and sass, move to and create WWW folder
+    // Installs bower libraries, compiles js and sass, moves to and creates WWW folder
     gulp.task('setup', ['install'], function() {
         gulp.start('indexDev');
         gulp.start('sass');

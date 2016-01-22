@@ -1,13 +1,16 @@
-module.exports = function(gulp, paths, SRC, WWW, util, ngAnnotate, plumber, rename, uglify, sourcemaps, concat) {
+module.exports = function(gulp, paths, SRC, WWW, util, ngAnnotate, plumber, rename, uglify, sourcemaps, concat, log, chalk) {
     'use strict';
 
-    // // Prevent watch from stopping on error
+    // // Prevents watch from stopping on error
     var onError = function (err) {
         util.beep();
-        console.log(err);
+        log(chalk.red('Syntax error:', err));
     };
 
-    // Concat, minify and annotate all js files in app/components/**
+    // Concats, minifies and annotates all js files in app/components/**
+    // Makes two files:
+    //     app-components.debug.js is not minified and has sourcemaps
+    //     app-components.js is minified
     gulp.task('jscomponents', function() {
         return gulp.src(paths.js.input.components, {cwd: SRC})
             .pipe(plumber({errorHandler: onError}))

@@ -2,10 +2,10 @@ module.exports = function(gulp, paths, SRC, WWW, prefixer, rename, minifyCss, sa
     'use strict';
 
     /*
-      Compile sass to css with source maps
-      then prefix
+      Compiles sass to css with source maps
+      then prefixes
       -> ionic.app.css
-      then minify
+      then minifies
       -> ionic.app.min.css
     */
     gulp.task('sass', function(done) {
